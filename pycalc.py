@@ -11,7 +11,10 @@ elif op == MINUS_SIGN:
 elif op == MULTIPLY_SIGN:
     result = a * b
 elif op == DIVIDE_SIGN:
-    result = a / b
+    if b != 0:
+        result = a / b
+    else:
+        exit("Error: Cannot divide by zero")
 else:
     exit("Error: Invalid operator")
 
