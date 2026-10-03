@@ -1,8 +1,21 @@
 from pycalc_consts import PLUS_SIGN, MINUS_SIGN, MULTIPLY_SIGN, DIVIDE_SIGN
+from pycalc_consts import OPERATORS
 
-a = float(input("Enter first number: "))
+
+try:
+    a = float(input("Enter first number: "))
+except ValueError:
+    exit("Error: Invalid first number")
+
 op = input("Enter operator (+, -, *, /): ")
-b = float(input("Enter second number: "))
+if op not in OPERATORS:
+    exit("Error: Invalid operator")
+
+try:
+    b = float(input("Enter second number: "))
+except ValueError:
+    exit("Error: Invalid second number")
+
 
 if op == PLUS_SIGN:
     result = a + b
@@ -17,5 +30,6 @@ elif op == DIVIDE_SIGN:
         exit("Error: Cannot divide by zero")
 else:
     exit("Error: Invalid operator")
+
 
 print(f"Result: {result}")
