@@ -1,0 +1,4 @@
+PLUS_SIGN = "+"
+MINUS_SIGN = "-"
+MULTIPLY_SIGN = "*"
+DIVIDE_SIGN = "/"
