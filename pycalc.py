@@ -2,34 +2,42 @@ from pycalc_consts import PLUS_SIGN, MINUS_SIGN, MULTIPLY_SIGN, DIVIDE_SIGN
 from pycalc_consts import OPERATORS
 
 
-try:
-    a = float(input("Enter first number: "))
-except ValueError:
-    exit("Error: Invalid first number")
-
-op = input("Enter operator (+, -, *, /): ")
-if op not in OPERATORS:
-    exit("Error: Invalid operator")
-
-try:
-    b = float(input("Enter second number: "))
-except ValueError:
-    exit("Error: Invalid second number")
+while True:
+    while True:
+        try:
+            a = float(input("Enter first number: "))
+            break
+        except ValueError:
+            print("Error: Invalid first number")
 
 
-if op == PLUS_SIGN:
-    result = a + b
-elif op == MINUS_SIGN:
-    result = a - b
-elif op == MULTIPLY_SIGN:
-    result = a * b
-elif op == DIVIDE_SIGN:
-    if b != 0:
-        result = a / b
+    op = input("Enter operator (+, -, *, /): ")
+    if op not in OPERATORS:
+        print("Error: Invalid operator")
+        continue
+
+    while True:
+        try:
+            b = float(input("Enter second number: "))
+            break
+        except ValueError:
+            print("Error: Invalid second number")
+
+
+    if op == PLUS_SIGN:
+        result = a + b
+    elif op == MINUS_SIGN:
+        result = a - b
+    elif op == MULTIPLY_SIGN:
+        result = a * b
+    elif op == DIVIDE_SIGN:
+        if b != 0:
+            result = a / b
+        else:
+            print("Error: Cannot divide by zero")
+            continue
     else:
-        exit("Error: Cannot divide by zero")
-else:
-    exit("Error: Invalid operator")
+        print("Error: Unexpected error occurred")
+        continue
 
-
-print(f"Result: {result}")
+    print(f"Result: {result}")
