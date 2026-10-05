@@ -1,4 +1,5 @@
 from pycalc_consts import PLUS_SIGN, MINUS_SIGN, MULTIPLY_SIGN, DIVIDE_SIGN
+from pycalc_consts import POWER_SIGNS
 from pycalc_consts import OPERATORS
 
 
@@ -35,6 +36,9 @@ while True:
         else:
             print("Error: Cannot divide by zero")
             continue
+    elif op in POWER_SIGNS:
+        result = a ** b
+        
     else:
         print("Error: Unexpected error occurred")
         continue
