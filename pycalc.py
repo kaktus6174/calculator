@@ -40,3 +40,5 @@ while True:
         continue
 
     print(f"Result: {result}")
+    if input("Do you want to perform another calculation? (y/n): ").lower() != 'y':
+        break
