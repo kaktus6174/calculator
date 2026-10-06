@@ -20,6 +20,7 @@ def get_operator(list_of_ops):
 
 
 while True:
+    print("\n")
     a = get_number()
     op = get_operator(OPERATORS)
     b = get_number()
@@ -38,11 +39,11 @@ while True:
             continue
     elif op in POWER_SIGNS:
         result = a ** b
-        
+
     else:
         print("Error: Unexpected error occurred")
         continue
 
     print(f"Result: {result}")
-    if input("Do you want to perform another calculation? (y/n): ").lower() != 'y':
+    if input("\nDo you want to perform another calculation? (y/n): ").lower() != 'y':
         break
