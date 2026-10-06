@@ -25,23 +25,27 @@ while True:
     op = get_operator(OPERATORS)
     b = get_number()
 
-    if op == PLUS_SIGN:
-        result = a + b
-    elif op == MINUS_SIGN:
-        result = a - b
-    elif op == MULTIPLY_SIGN:
-        result = a * b
-    elif op == DIVIDE_SIGN:
-        if b != 0:
-            result = a / b
-        else:
-            print("Error: Cannot divide by zero")
-            continue
-    elif op in POWER_SIGNS:
-        result = a ** b
+    try:
+        if op == PLUS_SIGN:
+            result = a + b
+        elif op == MINUS_SIGN:
+            result = a - b
+        elif op == MULTIPLY_SIGN:
+            result = a * b
+        elif op == DIVIDE_SIGN:
+            if b != 0:
+                result = a / b
+            else:
+                print("Error: Cannot divide by zero")
+                continue
+        elif op in POWER_SIGNS:
+            result = a ** b
 
-    else:
-        print("Error: Unexpected error occurred")
+        else:
+            print("Error: Unexpected error occurred")
+            continue
+    except OverflowError:
+        print("Error: Result is too large")
         continue
 
     print(f"Result: {result}")
