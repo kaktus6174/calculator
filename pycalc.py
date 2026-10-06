@@ -12,7 +12,7 @@ def get_number():
 
 def get_operator(list_of_ops):
     while True:
-        op = input(f"Enter operator {list_of_ops}: ")
+        op = input(f"Enter operator {list_of_ops}: ").strip()
         if op in OPERATORS:
             return op
         else:
